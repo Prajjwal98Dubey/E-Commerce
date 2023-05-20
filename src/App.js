@@ -3,27 +3,39 @@ import './App.css';
 import {  RouterProvider, createBrowserRouter } from 'react-router-dom';
 import MainBody from './components/MainBody';
 import Electronics from './components/Electronics';
+import Header from './components/Header';
+import Footer from './components/Footer';
+import SingleProductPage from './components/SingleProductPage';
+import ErrorPage from './components/ErrorPage';
 
 function App() {
   return (
       <>
-      <MainBody/>
+      <Header/>
       <RouterProvider router={appRouter}/>
-       
+      <Footer/>
       </>
   );
 }
 
-const appRouter= createBrowserRouter([{
+const appRouter= createBrowserRouter([
+  {
   path:'/',
-  element:<MainBody/>,
-  children:[
-    {
-      path:'/electronics',
-      element:<Electronics/>
-    }
-  ]
-}
-])
+  element:<MainBody/>
+  },
+  {
+    path:'/electronics',
+    element:<Electronics/>
+  },
+  {
+    path:'/singleproductpage',
+    element:<SingleProductPage/>
+  },
+  {
+    path:'*',
+    element:<ErrorPage/>
+  }
+]
+)
 
 export default App;
