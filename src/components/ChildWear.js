@@ -3,16 +3,15 @@ import Header from './Header'
 import Navbar from './Navbar'
 import Footer from './Footer'
 
-
-const Electronics = () => {
+const ChildWear = () => {
   return (
     <>
     <Header/>
     <Navbar/>
-    <div className='text-center text-2xl'>Electronics</div>
+    <div>ChildWear</div>
     <Footer/>
     </>
   )
 }
 
-export default Electronics
+export default ChildWear
