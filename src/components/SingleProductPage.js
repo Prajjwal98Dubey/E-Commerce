@@ -4,11 +4,18 @@ import { useSearchParams } from 'react-router-dom'
 import SinglePageProductShimmer from './SinglePageProductShimmer'
 import Header from './Header'
 import Footer from './Footer'
+import UserReviewCard from './UserReviewCard'
+import { useDispatch, useSelector } from 'react-redux'
+import { addToCart } from './cartSlice'
+import { Link } from 'react-router-dom'
 
 const SingleProductPage = () => {
+    const dispatch=useDispatch()
+    // const items = useSelector((store)=>store.cart.items)
     const[searchParam] = useSearchParams()
     const[item,setItem]=useState({})
     const[isloading,setIsLoading]=useState(true)
+    const[view,setView]=useState(false)
     useEffect(()=>{
         getSingleProduct()
     },[])
@@ -26,11 +33,11 @@ const SingleProductPage = () => {
         <Header/>
         <Navbar/>
          <div className='flex'>
-            <div >
+            <div>
                 <img className='w-[550px] h-[400px] mt-2 ml-2 cursor-pointer  hover:shadow-lg hover:rounded-2xl' src={item.thumbnail} alt="loading" />
                 <div className='mb-4 mt-4 text-center'>
-                    <button className='border border-black mr-2 text-[18px] bg-black text-white rounded-lg w-[115px] h-[50px] hover:bg-green-600 hover:text-white font-semibold p-[3px]'>Add to Cart</button>
-                    <button className='border border-black mr-2 text-[18px] bg-black text-white rounded-lg w-[115px] h-[50px] hover:shadow-lime-300 hover:shadow-2xl hover:bg-green-600 hover:text-white font-semibold'>Buy</button>
+                    <Link to='/addtocart'><button className='border border-black mr-2 text-[18px] bg-black text-white rounded-lg w-[115px] h-[50px] hover:bg-green-600 hover:text-white font-semibold p-[3px]' onClick={()=>dispatch(addToCart())}>Add to Cart</button></Link>
+                    <Link to='/buy'><button className='border border-black mr-2 text-[18px] bg-black text-white rounded-lg w-[115px] h-[50px] hover:shadow-lime-300 hover:shadow-2xl hover:bg-green-600 hover:text-white font-semibold'>Buy</button></Link>
                 </div>
             </div>
             <div className='mt-4 text-2xl ml-3'>
@@ -61,14 +68,22 @@ Bank Offer 5% off on SBI Bank Credit Card Transactions, up to ₹750. On orders 
                       </ul>
             </div>
          </div>
-         <div className='flex w-fit ml-[410px] mt-3 '>
-            <img src={item.images[0]} className=' rounded-xl hover:border border-yellow-500 mr-2 w-[180px]' alt="loading" />
-            <img className=' rounded-xl hover:border border-yellow-500 mr-2 w-[180px]' src={item.images[1]} alt="loading" />
-            <img className=' hover:border border-yellow-500 mr-2 rounded-xl w-[180px]' src={item.images[2]} alt="loading" />
+         <div className='flex w-fit ml-[600px] mt-[2px] mb-2 '>
+            <img src={item.images[0]} className=' hover:animate-wiggle rounded-xl hover:border border-yellow-500 mr-2 h-[100px] w-[160px]' alt="loading" />
+            <img className=' rounded-xl hover:border border-yellow-500 mr-2 h-[100px] w-[160px]' src={item.images[1]} alt="loading" />
+            <img className=' hover:border border-yellow-500 mr-2 rounded-xl h-[100px] w-[160px]' src={item.images[2]} alt="loading" />
          </div>
+         <UserReviewCard rating="⭐4.3 Rating" desc=" Lorem ipsum, dolor sit amet consectetur adipisicing elit. Incidunt placeat sunt veritatis repudiandae sapiente autem laudantium cum at, nesciunt doloribus sequi? Praesentium officia quas aliquam amet accusamus aspernatur quo dolore. Blanditiis repellat consequatur autem culpa doloremque animi mollitia et? Nisi corporis, blanditiis veritatis, corrupti maxime a pariatur voluptas atque unde itaque voluptatum, consectetur labore facere. Adipisci molestiae nihil provident ullam necessitatibus similique, obcaecati nesciunt harum, iure corrupti excepturi debitis, officiis optio consectetur earum ut officia?" head="Done the J0b"/>
+         <UserReviewCard rating="⭐3 Rating" desc=" Lorem ipsum, dolor sit amet consectetur adipisicing elit. Incidunt placeat sunt veritatis repudiandae sapiente autem laudantium cum at, nesciunt doloribus sequi? Praesentium officia quas aliquam amet accusamus aspernatur quo dolore. Blanditiis repellat consequatur autem culpa doloremque animi mollitia et? Nisi corporis, blanditiis veritatis, corrupti maxime a pariatur voluptas atque unde itaque voluptatum, consectetur labore facere. Adipisci molestiae nihil provident ullam necessitatibus similique, obcaecati nesciunt harum, iure corrupti excepturi debitis, officiis optio consectetur earum ut officia?" head="Suitable for kids"/>
+         <UserReviewCard rating="⭐5 Rating" desc=" Lorem ipsum, dolor sit amet consectetur adipisicing elit. Incidunt placeat sunt veritatis repudiandae sapiente autem laudantium cum at, nesciunt doloribus sequi? Praesentium officia quas aliquam amet accusamus aspernatur quo dolore. Blanditiis repellat consequatur autem culpa doloremque animi mollitia et? Nisi corporis, blanditiis veritatis, corrupti maxime a pariatur voluptas atque unde itaque voluptatum, consectetur labore facere. Adipisci molestiae nihil provident ullam necessitatibus similique, obcaecati nesciunt harum, iure corrupti excepturi debitis, officiis optio consectetur earum ut officia?" head="Better than all the products at the same range"/>
+         <UserReviewCard rating="⭐3.5 Rating" desc=" Lorem ipsum, dolor sit amet consectetur adipisicing elit. Incidunt placeat sunt veritatis repudiandae sapiente autem laudantium cum at, nesciunt doloribus sequi? Praesentium officia quas aliquam amet accusamus aspernatur quo dolore. Blanditiis repellat consequatur autem culpa doloremque animi mollitia et? Nisi corporis, blanditiis veritatis, corrupti maxime a pariatur voluptas atque unde itaque voluptatum, consectetur labore facere. Adipisci molestiae nihil provident ullam necessitatibus similique, obcaecati nesciunt harum, iure corrupti excepturi debitis, officiis optio consectetur earum ut officia?" head="Average experience"/>
+         <UserReviewCard rating="⭐4.4 Rating" desc=" Lorem ipsum, dolor sit amet consectetur adipisicing elit. Incidunt placeat sunt veritatis repudiandae sapiente autem laudantium cum at, nesciunt doloribus sequi? Praesentium officia quas aliquam amet accusamus aspernatur quo dolore. Blanditiis repellat consequatur autem culpa doloremque animi mollitia et? Nisi corporis, blanditiis veritatis, corrupti maxime a pariatur voluptas atque unde itaque voluptatum, consectetur labore facere. Adipisci molestiae nihil provident ullam necessitatibus similique, obcaecati nesciunt harum, iure corrupti excepturi debitis, officiis optio consectetur earum ut officia?" head="Gaming is not fine but screen looks decent"/>
+         {view ? null: <button onClick={()=>setView(!view)} className='font-Poppins ml-[805px] p-1 hover:text-blue-800'>All  Reviews</button>}
+         {view ?<><UserReviewCard rating="⭐4.9 Rating" desc=" Lorem ipsum, dolor sit amet consectetur adipisicing elit. Incidunt placeat sunt veritatis repudiandae sapiente autem laudantium cum at, nesciunt doloribus sequi? Praesentium officia quas aliquam amet accusamus aspernatur quo dolore. Blanditiis repellat consequatur autem culpa doloremque animi mollitia et? Nisi corporis, blanditiis veritatis, corrupti maxime a pariatur voluptas atque unde itaque voluptatum, consectetur labore facere. Adipisci molestiae nihil provident ullam necessitatibus similique, obcaecati nesciunt harum, iure corrupti excepturi debitis, officiis optio consectetur earum ut officia?" head="Gaming is not fine but screen looks decent"/><UserReviewCard rating="⭐4.9 Rating" desc=" Lorem ipsum, dolor sit amet consectetur adipisicing elit. Incidunt placeat sunt veritatis repudiandae sapiente autem laudantium cum at, nesciunt doloribus sequi? Praesentium officia quas aliquam amet accusamus aspernatur quo dolore. Blanditiis repellat consequatur autem culpa doloremque animi mollitia et? Nisi corporis, blanditiis veritatis, corrupti maxime a pariatur voluptas atque unde itaque voluptatum, consectetur labore facere. Adipisci molestiae nihil provident ullam necessitatibus similique, obcaecati nesciunt harum, iure corrupti excepturi debitis, officiis optio consectetur earum ut officia?" head="Gaming is not fine but screen looks decent"/><UserReviewCard rating="⭐4.9 Rating" desc=" Lorem ipsum, dolor sit amet consectetur adipisicing elit. Incidunt placeat sunt veritatis repudiandae sapiente autem laudantium cum at, nesciunt doloribus sequi? Praesentium officia quas aliquam amet accusamus aspernatur quo dolore. Blanditiis repellat consequatur autem culpa doloremque animi mollitia et? Nisi corporis, blanditiis veritatis, corrupti maxime a pariatur voluptas atque unde itaque voluptatum, consectetur labore facere. Adipisci molestiae nihil provident ullam necessitatibus similique, obcaecati nesciunt harum, iure corrupti excepturi debitis, officiis optio consectetur earum ut officia?" head="Gaming is not fine but screen looks decent"/><UserReviewCard rating="⭐4.9 Rating" desc=" Lorem ipsum, dolor sit amet consectetur adipisicing elit. Incidunt placeat sunt veritatis repudiandae sapiente autem laudantium cum at, nesciunt doloribus sequi? Praesentium officia quas aliquam amet accusamus aspernatur quo dolore. Blanditiis repellat consequatur autem culpa doloremque animi mollitia et? Nisi corporis, blanditiis veritatis, corrupti maxime a pariatur voluptas atque unde itaque voluptatum, consectetur labore facere. Adipisci molestiae nihil provident ullam necessitatibus similique, obcaecati nesciunt harum, iure corrupti excepturi debitis, officiis optio consectetur earum ut officia?" head="Gaming is not fine but screen looks decent"/></>: null}
          <Footer/>
       </>
   )
 }
 
 export default SingleProductPage
+

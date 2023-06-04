@@ -14,6 +14,10 @@ import SportsEquipment from './components/SportsEquipment';
 import AboutUs from './components/AboutUs';
 import Contact from './components/Contact';
 import Carrer from './components/Carrer';
+import Cart from './components/Cart';
+import { Provider } from 'react-redux';
+import AddToCart from './components/AddToCart';
+import BuyProduct from './components/BuyProduct';
 
 function App() {
   return (
@@ -79,6 +83,18 @@ const appRouter = createBrowserRouter([
   {
     path:'/carrer',
     element:<Carrer/>
+  },
+  {
+    path:'/cart',
+    element:<Cart/>
+  },
+  {
+    path:'/addtocart',
+    element:<AddToCart/>
+  },
+  {
+    path:'/buy',
+    element:<BuyProduct/>
   }
 ]
 )

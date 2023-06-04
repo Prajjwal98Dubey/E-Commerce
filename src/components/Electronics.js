@@ -2,6 +2,7 @@ import React from 'react'
 import Header from './Header'
 import Navbar from './Navbar'
 import Footer from './Footer'
+import VideoContainer from './VideoContainer'
 
 
 const Electronics = () => {
@@ -9,7 +10,9 @@ const Electronics = () => {
     <>
     <Header/>
     <Navbar/>
-    <div className='text-center text-2xl'>Electronics</div>
+    <div className='flex flex-wrap ml-[55px] mt-2'>
+    <VideoContainer/>
+    </div>
     <Footer/>
     </>
   )

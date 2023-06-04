@@ -5,10 +5,10 @@ const VideoCard = ({ products }) => {
     return (
         <>
           <Link to={'/singleproductpage?v=' + products.id}>
-          <div className='w-[350px] h-[350px] rounded-lg mx-4 my-2 border border-white hover:shadow-lg hover:border border-gray-400 cursor-pointer'>
+          <div className='w-[350px] h-[350px] rounded-lg mx-4 my-2 border border-white hover:shadow-lg hover:border border-gray-400 cursor-pointer hover:shadow-blue-200'>
                 <img className='w-[383px] h-[170px] rounded-md ' src={products.thumbnail} alt="loading..." />
                 <div className='text-2xl text-center'>{products.title}</div>
-                <div className='text-xl font-thin'>{products.description}</div>
+                <div className='text-xl text-center font-thin'>{products.description}</div>
                 <ul className='flex justify-around'>
                   <li className='border border-gray-400 bg-gray-400 rounded-lg text-white text-[14px] w-[60px] text-center'>₹{((products.price)*81).toLocaleString()}</li>
                   <li className='border border-green-600 bg-green-600 rounded-lg text-white text-[14px] '> ⭐{(products.rating).toFixed(1)}</li>
