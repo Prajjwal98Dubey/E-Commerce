@@ -36,28 +36,31 @@ const SingleProductPage = () => {
             <div>
                 <img className='w-[550px] h-[400px] mt-2 ml-2 cursor-pointer  hover:shadow-lg hover:rounded-2xl' src={item.thumbnail} alt="loading" />
                 <div className='mb-4 mt-4 text-center'>
-                    <Link to='/addtocart'><button className='border border-black mr-2 text-[18px] bg-black text-white rounded-lg w-[115px] h-[50px] hover:bg-green-600 hover:text-white font-semibold p-[3px]' onClick={()=>dispatch(addToCart())}>Add to Cart</button></Link>
-                    <Link to='/buy'><button className='border border-black mr-2 text-[18px] bg-black text-white rounded-lg w-[115px] h-[50px] hover:shadow-lime-300 hover:shadow-2xl hover:bg-green-600 hover:text-white font-semibold'>Buy</button></Link>
+                    <Link to='/addtocart'><button className='border border-black mr-2 text-[18px] bg-black text-white font-Poppins rounded-lg w-[115px] h-[50px] hover:bg-green-600 hover:text-white font-semibold p-[3px]' onClick={()=>dispatch(addToCart())}>Add to Cart</button></Link>
+                    <Link to='/buy'><button className='border border-black mr-2 text-[18px] bg-black text-white rounded-lg w-[115px] h-[50px] hover:shadow-lime-300 hover:shadow-2xl hover:bg-green-600 font-Poppins hover:text-white font-semibold'>Buy</button></Link>
                 </div>
             </div>
             <div className='mt-4 text-2xl ml-3'>
                 <ul>
-                
-                    <li className='text-2xl font-serif font-extrabold'>{item.title}</li>
-                    <li className='text-xl font-serif font-medium'>{item.brand}</li>
-                    <li className='text-xl font-sans font-semibold mb-2'>{item.description}</li>
+                    <div className='flex flex-col items-center'>
+                    <li className='text-2xl font-extrabold font-Poppins'>{item.title}</li>
+                    <li className='text-xl font-Poppins font-medium  '>{item.brand}</li>
+                    <li className='text-[17px] font-Poppins font-semibold mb-2'>{item.description}</li>
+                    </div>
                       <li>
-                        <div>
+                        <div className='flex flex-col items-center'>
                             <ul className=' ml-0 flex w-[200px] justify-around text-left'>
-                                <li className='text-4xl font-bold font-sans ml-28'>₹{((item.price)*81).toLocaleString()}</li>
-                                <li className='ml-3 text-xl font-medium mt-2 line-through'>₹{(((item.price)*81)/(1-item.discountPercentage/100)).toFixed(0).toLocaleString()}</li>
-                                <li className='text-[18px] p-[2px] mt-1 font-medium ml-2 border border-solid bg-red-600 text-white rounded-md'>{item.discountPercentage}%off</li>
+                                <li className='text-4xl font-bold font-Poppins ml-28'>₹{((item.price)*81).toLocaleString()}</li>
+                                <li className='ml-3 text-xl font-medium font-Poppins mt-2 line-through'>₹{(((item.price)*81)/(1-item.discountPercentage/100)).toFixed(0).toLocaleString()}</li>
+                                <li className='text-[18px] p-[2px] font-Poppins mt-1 font-medium ml-2 border border-solid bg-red-600 text-white rounded-md'>{item.discountPercentage}%off</li>
                             </ul>
                         </div>
                       </li>
-                      <li className='ml-5 text-xl border border-green-600 rounded-md text-white bg-green-600 w-[75px] font-mono'>⭐{(item.rating).toLocaleString()}</li>
-                      <li className=' mt-2 ml-4 text-xl font-medium'>{item.stock}<span className='text-[15px] ml-1 w-[100px] p-1 border border-black text-white rounded-md bg-black'>in stock</span></li>
-                      <div className='border border-black text-center rounded-3xl p-2 bg-black text-white font-semibold font-sans mt-4 mb-2 text-xl mr-2'>
+                      <div className='flex flex-col items-center'>
+                      <li className='ml-5 text-xl border border-green-600 rounded-md text-white bg-green-600 w-[75px] font-Poppins'>⭐{(item.rating).toLocaleString()}</li>
+                      <li className=' mt-2 ml-4 text-xl font-medium'>{item.stock}<span className='text-[15px] ml-1 w-[100px] font-Poppins p-1 border border-black text-white rounded-md bg-black'>in stock</span></li>
+                      </div>
+                      <div className='border border-black text-center rounded-3xl p-2 bg-black text-white font-semibold font-Poppins mt-4 mb-2 text-xl mr-2'>
                       <li className='cursor-pointer hover:bg-white hover:text-black hover:rounded-xl'>
 Bank Offer 10% off on HDFC Bank Credit Card Transactions, up to ₹750. On orders of ₹2,000 and above</li>
 <li className='cursor-pointer hover:bg-white hover:text-black hover:rounded-xl'>
@@ -69,7 +72,7 @@ Bank Offer 5% off on SBI Bank Credit Card Transactions, up to ₹750. On orders 
             </div>
          </div>
          <div className='flex w-fit ml-[600px] mt-[2px] mb-2 '>
-            <img src={item.images[0]} className=' hover:animate-wiggle rounded-xl hover:border border-yellow-500 mr-2 h-[100px] w-[160px]' alt="loading" />
+            <img src={item.images[0]} className=' rounded-xl hover:border border-yellow-500 mr-2 h-[100px] w-[160px]' alt="loading" />
             <img className=' rounded-xl hover:border border-yellow-500 mr-2 h-[100px] w-[160px]' src={item.images[1]} alt="loading" />
             <img className=' hover:border border-yellow-500 mr-2 rounded-xl h-[100px] w-[160px]' src={item.images[2]} alt="loading" />
          </div>

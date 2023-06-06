@@ -13,8 +13,8 @@ const Navbar = () => {
     <button className='border border-blue-900 p-1 rounded-lg bg-blue-400  w-[200px] h-[50px]'>Sport Equipments</button>
     <button className='border border-blue-900 p-1 rounded-lg bg-blue-400  w-[200px] h-[50px]'>Utensils</button>
     </div> */}
-     <div>
-      <ul className='flex justify-evenly  border border-b-black border-t-white font-semibold font-Poppins pt-[10px] pb-[10px] '>
+     <div className=' flex flex-col items-center mt-2 '>
+      <ul className='bg-black text-white rounded-full flex justify-evenly w-[1200px] border border-t-white font-semibold font-Poppins pt-[10px] pb-[10px] '>
        <Link to='/electronics'><li className='hover:underline cursor-pointer'>Electronics</li></Link> 
         <Link to='/mens-wear'><li className='hover:underline cursor-pointer'>Men's Wear</li></Link>
         <Link to='/women-wear'><li className='hover:underline cursor-pointer'>Women's Wear</li></Link>
