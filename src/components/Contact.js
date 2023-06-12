@@ -11,7 +11,7 @@ const Contact = () => {
      <div className='flex ml-40 mt-8 mb-4'>
       <div className='mr-8 mt-12'>
         <div className='pl-52 font-bold font-mono text-3xl'>Contact Us</div>
-        <img className=' rounded-b-3xl shadow-xl rounded-l-3xl w-[500px] h-[300px]' src="https://images01.nicepage.com/a1389d7bc73adea1e1c1fb7e/8e58eff423685c98b3e0cd66/pexels-photo-2584269.png" alt="loading" />
+        <img className=' rounded-b-3xl shadow-xl rounded-l-3xl w-[500px] h-[300px] ' src="https://images01.nicepage.com/a1389d7bc73adea1e1c1fb7e/8e58eff423685c98b3e0cd66/pexels-photo-2584269.png" alt="loading" />
       </div>
       <div className='border bg-gray-200 w-[473px] h-[500px] rounded-3xl pt-10'>
         <div className='text-center '>

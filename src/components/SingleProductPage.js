@@ -72,7 +72,7 @@ Bank Offer 5% off on SBI Bank Credit Card Transactions, up to ₹750. On orders 
             </div>
          </div>
          <div className='flex w-fit ml-[600px] mt-[2px] mb-2 '>
-            <img src={item.images[0]} className=' rounded-xl hover:border border-yellow-500 mr-2 h-[100px] w-[160px]' alt="loading" />
+            <img src={item.images[0]} className=' rounded-xl hover:border border-yellow-500 mr-2 h-[100px] w-[160px] ' alt="loading" />
             <img className=' rounded-xl hover:border border-yellow-500 mr-2 h-[100px] w-[160px]' src={item.images[1]} alt="loading" />
             <img className=' hover:border border-yellow-500 mr-2 rounded-xl h-[100px] w-[160px]' src={item.images[2]} alt="loading" />
          </div>

@@ -18,6 +18,7 @@ import Cart from './components/Cart';
 import { Provider } from 'react-redux';
 import AddToCart from './components/AddToCart';
 import BuyProduct from './components/BuyProduct';
+import Search from './components/Search';
 
 function App() {
   return (
@@ -95,6 +96,10 @@ const appRouter = createBrowserRouter([
   {
     path:'/buy',
     element:<BuyProduct/>
+  },
+  {
+    path:'/search',
+    element:<Search/>
   }
 ]
 )
