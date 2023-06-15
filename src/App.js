@@ -19,6 +19,7 @@ import { Provider } from 'react-redux';
 import AddToCart from './components/AddToCart';
 import BuyProduct from './components/BuyProduct';
 import Search from './components/Search';
+import PayOut from './components/PayOut';
 
 function App() {
   return (
@@ -100,6 +101,10 @@ const appRouter = createBrowserRouter([
   {
     path:'/search',
     element:<Search/>
+  },
+  {
+    path:'/payout',
+    element:<PayOut/>
   }
 ]
 )

@@ -37,7 +37,7 @@ const SingleProductPage = () => {
                 <img className='w-[550px] h-[400px] mt-2 ml-2 cursor-pointer  hover:shadow-lg hover:rounded-2xl' src={item.thumbnail} alt="loading" />
                 <div className='mb-4 mt-4 text-center'>
                     <Link to='/addtocart'><button className='border border-black mr-2 text-[18px] bg-black text-white font-Poppins rounded-lg w-[115px] h-[50px] hover:bg-green-600 hover:text-white font-semibold p-[3px]' onClick={()=>dispatch(addToCart())}>Add to Cart</button></Link>
-                    <Link to='/buy'><button className='border border-black mr-2 text-[18px] bg-black text-white rounded-lg w-[115px] h-[50px] hover:shadow-lime-300 hover:shadow-2xl hover:bg-green-600 font-Poppins hover:text-white font-semibold'>Buy</button></Link>
+                    <Link to={'/buy?v='+item.id}><button className='border border-black mr-2 text-[18px] bg-black text-white rounded-lg w-[115px] h-[50px] hover:shadow-lime-300 hover:shadow-2xl hover:bg-green-600 font-Poppins hover:text-white font-semibold'>Buy</button></Link>
                 </div>
             </div>
             <div className='mt-4 text-2xl ml-3'>
@@ -50,8 +50,8 @@ const SingleProductPage = () => {
                       <li>
                         <div className='flex flex-col items-center'>
                             <ul className=' ml-0 flex w-[200px] justify-around text-left'>
-                                <li className='text-4xl font-bold font-Poppins ml-28'>₹{((item.price)*81).toLocaleString()}</li>
-                                <li className='ml-3 text-xl font-medium font-Poppins mt-2 line-through'>₹{(((item.price)*81)/(1-item.discountPercentage/100)).toFixed(0).toLocaleString()}</li>
+                                <li className='text-4xl font-bold font-Poppins ml-28'>₹{((item.price)*81).toLocaleString()}.00</li>
+                                <li className='ml-3 text-xl font-medium font-Poppins mt-2 line-through'>₹{(((item.price)*81)/(1-item.discountPercentage/100)).toFixed(2).toLocaleString()}</li>
                                 <li className='text-[18px] p-[2px] font-Poppins mt-1 font-medium ml-2 border border-solid bg-red-600 text-white rounded-md'>{item.discountPercentage}%off</li>
                             </ul>
                         </div>
