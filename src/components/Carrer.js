@@ -4,6 +4,7 @@ import Navbar from './Navbar'
 import Footer from './Footer'
 import { Link } from 'react-router-dom'
 
+
 const Carrer = () => {
   const[isClicked,setIsClicked]=useState(false)
   const handleClick=()=>{
@@ -20,7 +21,6 @@ const Carrer = () => {
       <div className='text-2xl mt-4 animate-pulse2 '>You are Rejected even before applying for the job.Think about how poor your life is.</div>
       </div>
       <Link to='/home'><button className='bg-blue-600 ml-[530px] w-[210px] shadow-xl pl-5 text-center rounded-lg p-2 mt-20 mb-[200px] font-Poppins text-white text-2xl hover:bg-black hover:shadow-green-600 h-fit'>Explore🚀</button></Link>
-       
     <Footer/>
     </>
 

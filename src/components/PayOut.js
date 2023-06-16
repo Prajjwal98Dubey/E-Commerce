@@ -10,7 +10,7 @@ const PayOut = () => {
     <>
     <div className=' mt-[250px] flex flex-col items-center justify-center'>
         <div className='text-4xl font-Poppins font-extrabold'>
-            Waiting for the <span className='text-green-600'>"SSL"</span> Certificate
+            Dont' Have Payment Gateway as of now!!! 
             <div className='font-md text-xl'>Redirecting to Main Page...</div>
         </div>
     </div>

@@ -3,7 +3,7 @@ import './App.css';
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import MainBody from './components/MainBody';
 import Electronics from './components/Electronics';
-import SingleProductPage from './components/SingleProductPage';
+import SinglePageProduct2 from './components/SinglePageProduct2';
 import ErrorPage from './components/ErrorPage';
 import MenWear from './components/MenWear';
 import WomenWear from './components/WomenWear';
@@ -36,7 +36,7 @@ const appRouter = createBrowserRouter([
   },
   {
     path: '/singleproductpage',
-    element: <SingleProductPage />
+    element: <SinglePageProduct2/>
   },
   {
     path: '/electronics',

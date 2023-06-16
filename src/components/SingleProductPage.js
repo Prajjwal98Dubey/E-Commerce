@@ -11,7 +11,6 @@ import { Link } from 'react-router-dom'
 
 const SingleProductPage = () => {
     const dispatch=useDispatch()
-    // const items = useSelector((store)=>store.cart.items)
     const[searchParam] = useSearchParams()
     const[item,setItem]=useState({})
     const[isloading,setIsLoading]=useState(true)
@@ -36,7 +35,7 @@ const SingleProductPage = () => {
             <div>
                 <img className='w-[550px] h-[400px] mt-2 ml-2 cursor-pointer  hover:shadow-lg hover:rounded-2xl' src={item.thumbnail} alt="loading" />
                 <div className='mb-4 mt-4 text-center'>
-                    <Link to='/addtocart'><button className='border border-black mr-2 text-[18px] bg-black text-white font-Poppins rounded-lg w-[115px] h-[50px] hover:bg-green-600 hover:text-white font-semibold p-[3px]' onClick={()=>dispatch(addToCart())}>Add to Cart</button></Link>
+                    <Link to={'/addtocart?v='+item.id}><button className='border border-black mr-2 text-[18px] bg-black text-white font-Poppins rounded-lg w-[115px] h-[50px] hover:bg-green-600 hover:text-white font-semibold p-[3px]' onClick={()=>dispatch(addToCart())}>Add to Cart</button></Link>
                     <Link to={'/buy?v='+item.id}><button className='border border-black mr-2 text-[18px] bg-black text-white rounded-lg w-[115px] h-[50px] hover:shadow-lime-300 hover:shadow-2xl hover:bg-green-600 font-Poppins hover:text-white font-semibold'>Buy</button></Link>
                 </div>
             </div>

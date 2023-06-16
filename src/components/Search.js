@@ -21,10 +21,17 @@ const Search = () => {
     setProduct(filterData)
     setIsLoading(false)
   }
-  // const filterData=(element,product)=>{
-  //   const data=product.filter((p)=>p.title.includes(element))
-  //    return setProduct(data)
-  // } 
+  if(element==="")
+  { 
+    return (
+  <>
+  <Header/>
+  <Navbar/>
+   <div className='font-Poppins text-4xl font-bold mt-[210px] ml-[250px] mb-[350px]'>Search for some product,brand and more...</div>
+   <Footer/>
+   </>
+    )}
+
   return (
     <>
       <Header />
