@@ -6,11 +6,17 @@ import AddToCartShimmer from './AddToCartShimmer'
 import { useSearchParams } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 import AddToCartPage from './AddToCartPage'
+import { useDispatch, useSelector } from 'react-redux'
+import store from './store'
+import { addToCart } from './cartSlice'
+import NoItemCart from './NoItemCart'
 
 const AddToCart = () => {
   const [searchParam] = useSearchParams()
   const [isLoading, setIsLoading] = useState(true)
   const [product, setProduct] = useState([])
+  const items=useSelector((store)=>store.cart.items)
+  const dispatch=useDispatch()
   useEffect(() => {
     getProduct()
   }, [])
@@ -21,11 +27,24 @@ const AddToCart = () => {
     setIsLoading(false)
   }
 
+  if(items.length===0 && isLoading===false){
+    return <NoItemCart/>
+  }
+  // else{
+  //   getProduct()
+  // }
+
   return (
     <>
-      <Header />
+      {/* <Header />
       <Navbar />
       {isLoading ? <AddToCartShimmer/>: <AddToCartPage product={product}/> }
+      <Footer /> */}
+
+
+      <Header />
+      <Navbar />
+      {isLoading ? <AddToCartShimmer/>: items.map((item)=><AddToCartPage item={item}/>) }
       <Footer />
     </>
   )

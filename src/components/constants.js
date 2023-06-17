@@ -9,3 +9,5 @@ export const COUR_IMG1="https://m.media-amazon.com/images/I/81KkrQWEHIL._SX3000_
 export const COUR_IMG2="https://m.media-amazon.com/images/I/71U-Q+N7PXL._SX3000_.jpg"
 export const COUR_IMG3="https://m.media-amazon.com/images/I/71Ie3JXGfVL._SX3000_.jpg"
 export const COUR_IMG4="https://m.media-amazon.com/images/I/61lwJy4B8PL._SX3000_.jpg"
+export const EMPTY_CART_IMG="https://rukminim1.flixcart.com/www/800/800/promos/16/05/2019/d438a32e-765a-4d8b-b4a6-520b560971e8.png?q=90"
+export const CART_IMG="https://cdn-icons-png.flaticon.com/512/34/34627.png"

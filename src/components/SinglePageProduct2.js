@@ -1,3 +1,7 @@
+
+/// New Design of the single product page.
+
+
 import React, { useEffect, useState } from 'react'
 import Navbar from './Navbar'
 import { useSearchParams } from 'react-router-dom'
@@ -8,6 +12,8 @@ import UserReviewCard2 from './UserReviewCard2'
 import { useDispatch, useSelector } from 'react-redux'
 import { addToCart } from './cartSlice'
 import { Link } from 'react-router-dom'
+import { ToastContainer, toast } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css';
 
 const SinglePageProduct2 = () => {
     const dispatch=useDispatch()
@@ -25,6 +31,15 @@ const SinglePageProduct2 = () => {
         setIsLoading(false)
     }
 
+    const handleAddToCart=(item)=>{
+        dispatch(addToCart(item))
+    }
+   const handleToastClick=()=>{
+    toast.success(`${item.title} has been added!!`,{
+        position: toast.POSITION.TOP_RIGHT
+    })
+   }
+
     if(isloading===true) return <SinglePageProductShimmer/>
      
   return (
@@ -34,7 +49,7 @@ const SinglePageProduct2 = () => {
     <div className='bg-gray-200 h-[500px] font-Poppins'>
         <div className='flex pt-3 ml-1 mr-1'>
             <div className='bg-white w-[200px] h-[300px] mr-2 pl-2'>
-                <img className=' w-[180px] h-[90px]  mb-2 mt-2' src={item.images[2]} alt="loading" />
+                <img className=' w-[180px] h-[90px] rounded-lg  mb-2 mt-2' src={item.images[2]} alt="loading" />
                 <img className='w-[180px] h-[90px]  rounded-lg mb-2' src={item.images[3]}alt="loading" />
                 <img className='w-[180px] h-[90px]  rounded-lg mb-2' src={item.images[1]} alt="loading" />
             </div>
@@ -51,7 +66,10 @@ const SinglePageProduct2 = () => {
                 <div className='w-[150px] h-[30px] pt-1 rounded-lg text-center ml-[75px] mt-2 mb-2 font-semibold bg-black text-white'>{item.stock} left</div>
             </div>
             <div className='bg-white w-[200px] h-[300px] pt-[100px]'>
-                <Link to={'/addtocart?v='+item.id}><div className='w-[190px] ml-1 h-[35px] rounded-lg text-center text-md font-semibold text-white bg-orange-400 hover:bg-orange-600 mb-2'><button className='pt-1'>ADD TO CART</button></div></Link>
+               <div className='w-[190px] ml-1 h-[35px] rounded-lg text-center text-md font-semibold text-white bg-orange-400 hover:bg-orange-600 mb-2'><button className='pt-1' onClick={()=>{
+                handleAddToCart(item)
+                handleToastClick()
+                }}>ADD TO CART</button><ToastContainer className='w-[100px] h-[50px]'/></div>
                <Link to={'/buy?v='+item.id}><div className='w-[190px] ml-1 h-[35px] rounded-lg text-center bg-green-500 hover:bg-green-700 text-md text-white font-semibold ' ><button className='pt-1'>BUY NOW</button></div></Link> 
             </div>
         </div>
