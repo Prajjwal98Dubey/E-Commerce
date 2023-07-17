@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import MainShimmer from './MainShimmer'
-import VideoCard from './VideoCard'
+import VideoCard,{AdShower} from './VideoCard'
 
 const VideoContainer = () => {
   const [videos, setVideos] = useState([])
@@ -24,6 +24,7 @@ const VideoContainer = () => {
   if (loading === true) return <MainShimmer />
   return (
     <>
+       {/* {videos[0]&&<AdShower products={videos[0]} />} */}
       {videos.slice(0, paginate).map((video) => <VideoCard key={video.id} products={video} />)}
       { productCount > paginate ? <button className='mt-[10px] border border-blue-500 bg-blue-500 text-white w-[200px] h-[30px] mb-[10px] ml-[500px] rounded-xl' onClick={() => handlePagination()}>Load More...</button> : null}
     </>

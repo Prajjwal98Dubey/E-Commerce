@@ -17,7 +17,7 @@ const Search = () => {
   const getProduct = async (element) => {
     const data = await fetch('https://dummyjson.com/products')
     const json = await data.json()
-    const filterData = json.products.filter((p) => (p.title.toLowerCase().includes(element.toLowerCase()) || p.description.includes(element.toLowerCase())))
+    const filterData = json.products.filter((p) =>(p.title.toLowerCase().includes(element.toLowerCase()) || p.description.includes(element.toLowerCase())))
     setProduct(filterData)
     setIsLoading(false)
   }
