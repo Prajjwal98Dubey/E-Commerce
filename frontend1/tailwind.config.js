@@ -3,6 +3,11 @@ module.exports = {
   content: ["./src/**/*.js"],
   theme: {
     extend: {
+      screens: {
+        'mobile': '410px',
+        'initial':'0px'
+        
+      },
       keyframes: {
         wave: {
           '0%': { transform: 'rotate(0.0deg)' },

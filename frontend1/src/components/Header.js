@@ -25,9 +25,12 @@ const Header = () => {
   }, [text])
   return (
     <>
-      <div className='flex flex-col items-center sticky top-0'>
+    <div className='md:hidden'>
+      <div className='w-full bg-green-500 h-[56px] flex justify-center items-center text-white text-xl font-bold'>EasyShop</div>
+    </div>
+      <div className=' initial:hidden md:block flex flex-col items-center sticky top-0'>
         <ul className='flex w-full font-Poppins justify-around font-semibold bg-green-500 h-[56px] p-2'>
-          <Link to='/'><li className='text-2xl  hover:underline'>EasyShop</li></Link>
+          <Link to='/'><li className='text-2xl hover:underline'>EasyShop</li></Link>
           <li><input className='w-[400px] h-[35px] rounded-l-lg mt-[1px] pl-2' placeholder='Search products,brand and more' onChange={(e) => setText(e.target.value)} value={text} type='search' />
             <Link to={'/search?v=' + text}><button className='border border-white w-[50px] h-[35px] hover:bg-green-300 rounded-r-lg'>🔎</button></Link>
             { text!=="" ? <div className=' fixed bg-white w-[400px] px-2 py-2 cursor-pointer rounded-lg '>
@@ -36,7 +39,7 @@ const Header = () => {
               </ul>
             </div>: null}
           </li>
-          <Link to='/AddToCart'><li className=' ml-6 text-2xl w-fit '><div className='flex w-fit h-fit'>
+          <Link to='/AddToCart'><li className='text-2xl w-fit initial:hidden md:block '><div className='flex w-fit h-fit'>
             <div className='text-2xl w-fit h-fit hover:underline'>Cart</div>
             <div className='ml-[5px] text-[20px] mb-4 font-bold'>{cartQuantity}</div>
           </div></li></Link>

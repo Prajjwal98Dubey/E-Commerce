@@ -9,11 +9,12 @@ const MainBody = () => {
     const [selected,setSelected]=useState("")
     return (
         <>
+        <div className='w-full'>
             <Header/>
             <Navbar />
             <MainContainer />
             <Footer/>
-            
+            </div>
         </>
     )
 }
